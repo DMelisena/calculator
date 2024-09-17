@@ -15,9 +15,15 @@ body{
   font-size:20px;
 }
 .lcd{
-  min-height:50px;
+  min-height:30px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  padding:10px;
   background:black;
   margin:10px 6px 5px 6px;
+  color:white;
+  font-size:20px; 
 }
 
 button{
@@ -50,7 +56,6 @@ button:hover{
   padding:6px 10px;
 }
 
-
 .content{
   display:flex;
   justify-content:center;
@@ -59,4 +64,7 @@ button:hover{
   background:grey;
   align-self:center;
   border-radius:5px;
+}
+
+.lcd{
 }
