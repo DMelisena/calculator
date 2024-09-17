@@ -18,3 +18,31 @@ var text = "0";
 var first = 0;
 var second = 0;
 
+numberPad.forEach(function(button) {
+  button.addEventListener("click", function() {
+    var numClick = button.innerHTML;
+    console.log(numClick)
+    console.log(numClick, "is clicked"); 
+    if(text==0){
+      text = numClick
+    }
+    else{
+      text+=numClick
+    }
+    console.log(text, "is the monitor text");
+    monitor.textContent = text;
+  });
+});
+
+
+operatorPad.forEach(function(button) {
+  button.addEventListener("click", function() {
+    monitor.textContent = text;
+    first = parseInt(text)
+    console.log(first)
+    console.log(first*5)
+    text=0
+    monitor.textContent = text;
+  });
+});
+//
