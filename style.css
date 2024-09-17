@@ -14,3 +14,31 @@ body{
   padding:10px;
   font-size:20px;
 }
+.lcd{
+  min-height:50px;
+  background:black;
+  margin:10px 6px 5px 6px;
+}
+
+button{
+  font-size:30px;
+  min-width: 40px;
+  min-height:42px;
+  margin:5px 2px ;
+  text-align:center;
+}
+
+.numpads{
+  padding:10px;
+}
+
+
+.content{
+  display:flex;
+  justify-content:center;
+}
+.calc-body{
+  background:grey;
+  align-self:center;
+  border-radius:5px;
+}
