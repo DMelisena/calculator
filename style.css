@@ -1,0 +1,16 @@
+body{
+  background:black;
+  display:flex;
+  flex-flow:column;
+  min-height:100vh;
+  justify-content:space-between;
+  margin:0;
+}
+
+.footer,
+.header{
+  background:grey;
+  text-align:center;
+  padding:10px;
+  font-size:20px;
+}
