@@ -156,3 +156,8 @@ function execute(a,b,operator){
       break;
   }
 }
+
+// TODO:
+// ESC retart function
+// backspace/delete function
+// keyboard function
