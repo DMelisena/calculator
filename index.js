@@ -26,7 +26,16 @@ numberPad.forEach(function(button) {
     var numClick = button.innerHTML;
     console.log(numClick)
     console.log(numClick, "is clicked"); 
-    if(text==0){
+    if (operatorMonitor.innerHTML=="="){
+      text=""
+      first=0
+      monitor.textContent=numClick
+      text+=numClick
+      operatorText=""
+      operatorMonitor.textContent=operatorText
+      console.log("current operator is = numpad pressed")
+    }
+    else if(text==0){
       text = numClick
     }
     else{
@@ -59,11 +68,22 @@ var statedOperator=''
 console.log('turned on')
 operatorPad.forEach(function(button) {
   button.addEventListener("click", function() {
+    console.log("operator",operatorMonitor)
+    console.log("first")
     if (calOff==true){
       monitor.textContent="0"
       console.log("theres no number on text and first yet, adding zero")
       calOff=false
       console.log("is off")
+    }
+    else if (operatorMonitor.innerHTML=="="&&firstMonitor.innerHTML==""){
+      text=monitor.innerHTML
+      console.log("it's finished",text)
+      first = parseInt(text);
+      firstMonitor.textContent = first;
+      text = 0
+      monitor.textContent = 0;
+      operatorMonitor.textContent=button.innerHTML;
     }
     else if (button.innerHTML=="="){
       text = monitor.innerHTML
@@ -74,6 +94,7 @@ operatorPad.forEach(function(button) {
       firstMonitor.textContent="";
       first=parseInt(firstText)
       operatorMonitor.textContent="=";
+      text=0
       console.log(answer)
     }
     else if (first>0||first<0){
