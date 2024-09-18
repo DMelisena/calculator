@@ -40,6 +40,16 @@ numberPad.forEach(function(button) {
 var operatorText=''
 var firstText=''
 
+const add = (a,b)=> {return a+b}
+const subtract = (a,b)=> {return a-b}
+const times = (a,b)=> {return a*b}
+const divide = (a,b)=> {return a/b}
+const power = (a,b)=> {return a**b}
+const root = (a,b)=> {return Math.pow(a,1/b)}
+
+var answer = 0
+var num = 0
+
 operatorPad.forEach(function(button) {
   button.addEventListener("click", function() {
 
