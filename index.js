@@ -22,6 +22,7 @@ var second = 0;
 
 numberPad.forEach(function(button) {
   button.addEventListener("click", function() {
+    calOff=false
     var numClick = button.innerHTML;
     console.log(numClick)
     console.log(numClick, "is clicked"); 
@@ -36,7 +37,6 @@ numberPad.forEach(function(button) {
   });
 });
 
-
 var operatorText=''
 var firstText=''
 
@@ -47,30 +47,42 @@ const divide = (a,b)=> {return a/b}
 const power = (a,b)=> {return a**b}
 const root = (a,b)=> {return Math.pow(a,1/b)}
 
+var calOff=true;
+console.log(calOff)
+
 var answer = 0
 var num = 0
 
+monitor.textContent=undefined
+
+console.log('turned on')
 operatorPad.forEach(function(button) {
   button.addEventListener("click", function() {
+    if (calOff==true){
+      monitor.textContent="0"
+      console.log("theres no number on text and first yet, adding zero")
+      calOff=false
+      console.log("is off")
+    }
+    else if (first>0||first<0){
+      second = (parseInt(text))
+      console.log("calculating")
+    }
+    else{//if there is firstText, calculate the firstText and text and existing operator
+      //move text to first monitor (change string into number)
+      //add the operator to bottom left of screen
+      firstText = monitor.innerHTML
+      operatorText = button.innerHTML
+      console.log("theres no number on first yet, storing operator and text to first")
+      firstMonitor.textContent=firstText;
+      first=parseInt(firstText)
+      operatorMonitor.textContent=operatorText;
+      text=0
+      monitor.textContent=text
+    }
+  });
+});
 
-    //look for the typed number and chosen operator
-    firstText = monitor.innerHTML
-    operatorText = button.innerHTML
-    //chane the lower screen 
-    firstMonitor.textContent=firstText;
-    operatorMonitor.textContent=operatorText;
-    monitor.textContent = text;
-    first = parseInt(text)
-
-    text=0
-    monitor.textContent = text;
-    //NOTE: NOW That first operand is stored,
-    //the second text should be the second variable
-    //
-    ///NOTE: 
-    //if first value exist, calculate
-    //if no first value, only move it to first
-    
     if(first!=0){
       switch(operatorMonitor.textContent){
         case '+':
@@ -88,8 +100,3 @@ operatorPad.forEach(function(button) {
           break;
       }
     }
-
-
-    
-  });
-});
