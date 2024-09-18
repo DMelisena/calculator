@@ -12,7 +12,7 @@ const monitor = document.querySelector(".text-lcd")
 const operatorMonitor = document.querySelector(".operator-lcd")
 const numberPad = document.querySelectorAll(".number")
 const operatorPad = document.querySelectorAll(".operator")
-
+const firstMonitor = document.querySelector(".first-lcd")
 
 var numClick=0
 
@@ -38,17 +38,21 @@ numberPad.forEach(function(button) {
 
 
 var operatorText=''
+var firstText=''
+
 operatorPad.forEach(function(button) {
   button.addEventListener("click", function() {
+
+    //look for the typed number and chosen operator
+    firstText = monitor.innerHTML
     operatorText = button.innerHTML
-    console.log("operatorText",operatorText)
+    //chane the lower screen 
+    firstMonitor.textContent=firstText;
     operatorMonitor.textContent=operatorText;
     monitor.textContent = text;
     first = parseInt(text)
-    console.log(first)
-    console.log(first*5)
+
     text=0
     monitor.textContent = text;
   });
 });
-//
