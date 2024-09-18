@@ -54,6 +54,7 @@ var answer = 0
 var num = 0
 
 monitor.textContent=undefined
+var statedOperator=''
 
 console.log('turned on')
 operatorPad.forEach(function(button) {
@@ -64,9 +65,24 @@ operatorPad.forEach(function(button) {
       calOff=false
       console.log("is off")
     }
+    else if (button.innerHTML=="="){
+      text = monitor.innerHTML
+      second = parseInt(text)
+      operatorText=operatorMonitor.innerHTML
+      answer = execute(first,second,operatorText)
+      monitor.textContent=answer
+      firstMonitor.textContent="";
+      first=parseInt(firstText)
+      operatorMonitor.textContent="=";
+      console.log(answer)
+      
+    }
     else if (first>0||first<0){
       second = (parseInt(text))
       console.log("calculating")
+      statedOperator=operatorMonitor.innerHTML
+      answer = execute(first,second,statedOperator)
+      monitor.textContent=answer
     }
     else{//if there is firstText, calculate the firstText and text and existing operator
       //move text to first monitor (change string into number)
@@ -83,20 +99,37 @@ operatorPad.forEach(function(button) {
   });
 });
 
-    if(first!=0){
-      switch(operatorMonitor.textContent){
-        case '+':
-          console.log("+ is executed")
-          break;
-        case '-':
-          break;
-        case '/':
-          break;
-        case '×':
-          break;
-        case '√':
-          break;
-        case '^':
-          break;
-      }
-    }
+// NOTE: 
+//add function that is refered by all button instead of implementing the function to all button
+function execute(a,b,operator){
+  switch(operator){
+    case '+':
+      console.log("+ is executed")
+      return add(a,b)
+      break;
+    case '-':
+      console.log("- is executed")
+      return subtract(a,b)
+      break;
+    case '/':
+      console.log("/ is executed")
+      return divide(a,b)
+      break;
+    case '×':
+      firstMonitor.textcontent = times(first,text)
+      console.log("× is executed")
+      return times(a,b)
+      break;
+    case '√':
+      console.log("√ is executed")
+      return root(a,b)
+      break;
+    case '^':
+      console.log("^ is executed")
+      return power(a,b)
+      break;
+    case '=':
+
+      break;
+  }
+}
