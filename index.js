@@ -8,9 +8,11 @@
 
 //if number clicked, put number on monitor,
 //if other button is clicked, put 0 on the monitor
-const monitor = document.querySelector(".lcd")
+const monitor = document.querySelector(".text-lcd")
+const operatorMonitor = document.querySelector(".operator-lcd")
 const numberPad = document.querySelectorAll(".number")
 const operatorPad = document.querySelectorAll(".operator")
+
 
 var numClick=0
 
@@ -35,8 +37,12 @@ numberPad.forEach(function(button) {
 });
 
 
+var operatorText=''
 operatorPad.forEach(function(button) {
   button.addEventListener("click", function() {
+    operatorText = button.innerHTML
+    console.log("operatorText",operatorText)
+    operatorMonitor.textContent=operatorText;
     monitor.textContent = text;
     first = parseInt(text)
     console.log(first)
