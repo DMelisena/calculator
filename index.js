@@ -54,5 +54,32 @@ operatorPad.forEach(function(button) {
 
     text=0
     monitor.textContent = text;
+    //NOTE: NOW That first operand is stored,
+    //the second text should be the second variable
+    //
+    ///NOTE: 
+    //if first value exist, calculate
+    //if no first value, only move it to first
+    
+    if(first!=0){
+      switch(operatorMonitor.textContent){
+        case '+':
+          console.log("+ is executed")
+          break;
+        case '-':
+          break;
+        case '/':
+          break;
+        case '×':
+          break;
+        case '√':
+          break;
+        case '^':
+          break;
+      }
+    }
+
+
+    
   });
 });
