@@ -75,14 +75,16 @@ operatorPad.forEach(function(button) {
       first=parseInt(firstText)
       operatorMonitor.textContent="=";
       console.log(answer)
-      
     }
     else if (first>0||first<0){
-      second = (parseInt(text))
-      console.log("calculating")
-      statedOperator=operatorMonitor.innerHTML
-      answer = execute(first,second,statedOperator)
-      monitor.textContent=answer
+      second = (parseInt(text));
+      console.log("calculating");
+      statedOperator=operatorMonitor.innerHTML;
+      answer = execute(first,second,statedOperator);
+      first = answer;
+      firstMonitor.textContent=answer;
+      text = 0;
+      monitor.textContent = text;
     }
     else{//if there is firstText, calculate the firstText and text and existing operator
       //move text to first monitor (change string into number)
