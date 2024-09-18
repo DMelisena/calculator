@@ -168,4 +168,10 @@ escPad.addEventListener("click", function() {
   operatorMonitor.textContent=text
 });
 // backspace/delete function
+const deletePad = document.querySelector(".delete")
+deletePad.addEventListener("click", function() {
+  text=text.slice(0,-1)
+  console.log('deletePAd activated')
+  monitor.textContent = text
+});
 // keyboard function
