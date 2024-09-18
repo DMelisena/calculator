@@ -15,16 +15,31 @@ body{
   font-size:20px;
 }
 .lcd{
-  min-height:30px;
   display:flex;
-  align-items:flex-end;
-  justify-content:flex-end;
+  flex-flow:column;
   padding:10px;
+  min-height:40px;
   background:black;
   margin:10px 6px 5px 6px;
   color:white;
+}
+
+.text-lcd{
+  align-self:flex-end;
+}
+
+.text-lcd,
+.monitor-lcd{
   font-size:20px; 
 }
+.bottom-lcd{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  font-size:10px; 
+  min-height:12px;
+}
+
 
 button{
   font-size:30px;
