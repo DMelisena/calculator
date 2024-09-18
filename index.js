@@ -159,5 +159,13 @@ function execute(a,b,operator){
 
 // TODO:
 // ESC retart function
+const escPad = document.querySelector(".esc")
+escPad.addEventListener("click", function() {
+  text=""
+  first=0
+  monitor.textContent=text
+  firstMonitor.textContent=text
+  operatorMonitor.textContent=text
+});
 // backspace/delete function
 // keyboard function
