@@ -101,6 +101,7 @@ operatorPad.forEach(function(button) {
       second = (parseInt(text));
       console.log("calculating");
       statedOperator=operatorMonitor.innerHTML;
+      //FIX: if 5 + 5 - 3 is clicked, it would instead turned into 5+5+3
       answer = execute(first,second,statedOperator);
       first = answer;
       firstMonitor.textContent=answer;
