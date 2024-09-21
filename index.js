@@ -103,6 +103,7 @@ operatorPad.forEach(function(button) {
       statedOperator=operatorMonitor.innerHTML;
       //FIX: if 5 + 5 - 3 is clicked, it would instead turned into 5+5+3
       answer = execute(first,second,statedOperator);
+      operatorMonitor.textContent=button.innerHTML
       first = answer;
       firstMonitor.textContent=answer;
       text = 0;
